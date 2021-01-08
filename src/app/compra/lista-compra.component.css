@@ -1,0 +1,32 @@
+#th{
+    background-color: green;
+    color: white; 
+    font-size: 15px; 
+}
+
+h2.ui.header {
+    font-size: 30px;
+    color: green;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-family: 'Century Gothic';
+}
+
+#table{
+    border: 1px solid green;
+    text-align: center;
+}
+
+#id{
+    color: #815000;
+    font-size: 15px;
+}
+
+#container{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+

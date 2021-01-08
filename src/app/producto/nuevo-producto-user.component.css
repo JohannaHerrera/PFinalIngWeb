@@ -1,0 +1,46 @@
+#diners{
+    font-size: 15px;
+}
+
+#form{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    width: 30%;
+    background-image: url("https://wallpaperaccess.com/full/781705.jpg");
+    border-radius: 4%;
+    border: 3px solid  #815000;
+    background-size: 100%;
+}
+
+#form label{
+    font-size: 115%;
+    color: black;
+}
+
+#datos{
+    width: 70%;
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#botones{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 35%;
+}
+
+#pagar{
+    width: 45%;
+}
+
+h3.ui.header {
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    color: green;
+}

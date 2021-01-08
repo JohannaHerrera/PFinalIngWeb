@@ -1,0 +1,17 @@
+#registro{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 2% !important;
+    margin-bottom: 10% !important;
+    margin-bottom: auto !important;
+    background-color: rgb(166, 255, 166);
+    border: 3px solid rgb(33, 185, 84);
+}
+
+#fondo{
+    background-image: url("https://img.pixers.pics/pho_wat(s3:700/FO/23/49/75/52/4/700_FO234975524_4fd59bf80ed4cab40331babab31b1727,700,700,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,650,jpg)/cortinas-de-ducha-patron-sin-fisuras-con-lindos-perezosos-colgando-en-los-arboles-de-la-selva-dibujado-a-mano-adorable-fondo-animal-ilustracion-de-la-selva-tropical-perezosos-graciosos-tucanes-flores-hojas-para-tela-papel-ninos-decoracion-de-habitaciones.jpg.jpg");
+    background-size: 50% !important;
+    padding-top: 2% !important;
+    padding-bottom: 2% !important;
+}

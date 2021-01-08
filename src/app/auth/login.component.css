@@ -1,0 +1,17 @@
+#login{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 5% !important;
+    margin-bottom: 10% !important;
+    margin-bottom: auto !important;
+    background-color: rgb(215, 250, 220);
+    border: 3px solid rgb(3, 66, 68);;
+}
+
+#fondo{
+    background-image: url("https://www.muralswallpaper.com/app/uploads/Kids-Jungle-Animal-Friends-Wallpaper-Mural-Swatch-820x532.jpg");
+    background-size: auto !important;
+    padding-top: 6% !important;
+    padding-bottom: 10% !important;
+}

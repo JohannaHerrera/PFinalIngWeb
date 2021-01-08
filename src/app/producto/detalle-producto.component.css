@@ -1,0 +1,22 @@
+#card{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    font-size: 20px;
+    width: 50%;
+    height: 50%;
+    border-radius: 10%;
+    color: black;
+    background-image: url("https://i.pinimg.com/originals/77/34/ff/7734ff955350666f4d631a87a7c1381f.jpg");
+    border: 3px solid  black;
+    background-size: 135%;
+}
+
+#titulo {
+    font-size: 28px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    color:white;
+    font-family: 'Century Gothic';
+}

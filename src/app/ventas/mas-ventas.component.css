@@ -1,0 +1,16 @@
+#card{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 2%;
+    padding-right: 2%;
+    text-align: center;
+    font-size: 25px;
+    width: 50%;
+}
+
+#titulo {
+    color: green;
+    font-size: 33px;
+    font-family: 'Century Gothic';
+}

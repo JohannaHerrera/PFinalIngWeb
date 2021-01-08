@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="ui container">
+  <div class="row" *ngIf="compra">
+    <div class="column">
+        <div id="card" class="ui card">
+            <div class="content">
+              <h3 id="titulo" class="ui header">Detalle</h3>
+            </div>
+            <div class="content">
+              <div class="ui list">
+                <div class="item"><b>ID: </b>{{compra.id}}</div>
+                <div class="item"><b>Fecha: </b>{{compra.fecha | date: 'dd/MM/yyyy'}}</div>
+                <div class="item"><b>Usuario: </b>{{compra.idusuario}}</div>
+                <div class="item"><b>Total: </b>{{compra.total}}$</div>
+                <div class="item"><b>Observacion: </b>{{compra.observacion}}</div>
+              </div>
+            </div>
+            <div class="content">
+                <button class="ui blue button btn-block" (click)="volver()"><i class="arrow alternate circle left icon"></i>Volver</button>
+            </div>
+          </div>      
+    </div>
+</div>
+</div>

@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="ui container">
+    <div class="row">
+        <div class="column">
+            <h3 id="titulo" class="ui header">NUEVA FACTURA</h3>
+            <form id="form" class="ui form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="field">
+                    <label for="idusuario">Usuario</label>
+                    <select [(ngModel)]="idusuario" required class="form-control" id="idusuario" name="idusuario">
+                        <option *ngFor="let usuario of usuarios" [value]="usuario.id">{{usuario.nombreUsuario}}</option>
+                    </select> 
+                </div>
+                <div class="field">
+                    <label for="observacion">Observación</label>
+                    <input type="text" class="form-control" id="observacion" name="observacion"
+                    [(ngModel)]="observacion" required>
+                </div>
+                <button class="ui green button btn-block" [disabled]="!f.valid">
+                    <i class="check circle icon"></i>Crear</button>
+                <button class="ui blue button btn-block" routerLink="/listaCompra">
+                    <i class="arrow alternate circle left icon"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

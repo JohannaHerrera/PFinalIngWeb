@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id="bienv" class="ui container">
+    <div *ngIf="isLogged; else loggedOut">
+        <h2 class="ui header">¡ Bienvenido {{nombreUsuario}} !</h2>
+        <img id="image" class="ui image" src="https://image.freepik.com/vector-gratis/ilustracion-divertidos-dibujos-animados-animales-zoologicos_50699-633.jpg">
+    </div>
+    
+    <ng-template #loggedOut>
+        <h2 class="ui header">No has iniciado sesión</h2>
+        <img id="image" class="ui image" src="https://www.animalshealth.es/fileuploads/news/leones-zoo-del-bronx-covid19-coronavirus-115876261861.jpg">
+    </ng-template>
+</div>

@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<div id="container" class="ui container">
+  <h2 *ngIf="isAdmin" class="ui header">Tarifas</h2>
+  <img *ngIf="!isAdmin" id="image" class="ui image" src="https://img.freepik.com/vector-gratis/zoologico-word-textura-piel-animal-diferente_1308-5255.jpg?size=626&ext=jpg">
+  <h2 id="titulo" *ngIf="!isAdmin" class="ui header">Tarifas</h2>
+  <table id="table" class="ui celled table">
+    <thead>
+      <tr>
+        <th id="th" scope="col">ID</th>
+        <th id="th" scope="col">Nombre</th>
+        <th id="th" scope="col">Descripción</th>
+        <th id="th" scope="col">Precio</th>
+        <th id="th" *ngIf="isAdmin" scope="col">Ver</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Editar</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Borrar</th>
+        <th id="th" scope="col" *ngIf="!isAdmin">Comprar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tarifa of tarifas">
+        <td id="id"><b>{{tarifa.id}}</b></td>
+        <td>{{tarifa.nombre}}</td>
+        <td>{{tarifa.descripcion}}</td>
+        <td>{{tarifa.precio}}$</td>
+        <td *ngIf="isAdmin"><button class="ui inverted blue button" routerLink="/detalleTarifa/{{tarifa.id}}"><i class="eye icon"></i> Ver</button></td>
+        <td *ngIf="isAdmin"><button class="ui inverted green button" routerLink="/editarTarifa/{{tarifa.id}}"><i class="edit icon"></i> Editar</button></td>
+        <td *ngIf="isAdmin"><button class="ui inverted red button" (click)="borrar(tarifa.id)"><i class="trash alternate icon"></i> Eliminar</button></td>
+        <td *ngIf="!isAdmin"><button class="ui green button" routerLink="/nuevoBUser/{{tarifa.id}}">
+          <i class="shopping cart icon"></i> Comprar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div class="mt-3" *ngIf="isAdmin">
+    <button class="ui green button" routerLink="/nuevoTarifa">
+      <i class="plus circle icon"></i> Nueva Tarifa</button>
+  </div>
+</div>
+<br>
+<br>

@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="ui container">
+    <div class="row">
+        <div class="column">
+            <form id="form" class="ui form" novalidate #f="ngForm">
+                <div id="datos" class="field">
+                    <label for="fecha">Fecha de visita</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha"
+                    [(ngModel)]="fecha" required>
+                </div>
+                <div id="datos" class="field">
+                    <label for="idtarifa">Tarifa</label>
+                    <select [(ngModel)]="idtarifa" required class="form-control" id="idtarifa" name="idtarifa">
+                        <option *ngIf="tarifa" [value]="tarifa.id">{{tarifa.nombre}}</option>
+                    </select> 
+                </div>
+                <div id="datos" class="field">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" (input)="CTotal(cantidad)" (click)="CTotal(cantidad)"
+                    [(ngModel)]="cantidad" required>
+                </div>
+                <div id="datos" class="field">
+                    <label for="total">Total</label>
+                    <input [(ngModel)]="total" [disabled]="true" class="form-control" id="total" name="total" [value]="totalT">
+                </div>
+            </form>
+            <br>
+            <div id="botones">
+                <button class="ui green button btn-block" [disabled]="!f.valid" (click)="onCreate()">
+                    <i class="plus circle icon"></i> Comprar otro boleto</button>
+                <button id="pagar" class="ui blue button btn-block" [disabled]="!f.valid" (click)="pagar()">
+                    <i id="diners" class="cc diners club icon"></i> Pagar</button>
+            </div>
+        </div>
+    </div>
+</div>

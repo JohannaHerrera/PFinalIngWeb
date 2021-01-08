@@ -1,0 +1,44 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<div id="container" class="ui container">
+  <h2 class="ui header">Facturas</h2>
+  <table id="table" class="ui celled table">
+    <thead>
+      <tr>
+        <th id="th" scope="col">ID</th>
+        <th id="th" scope="col">Fecha</th>
+        <th *ngIf="isAdmin" id="th" scope="col">Usuario</th>
+        <th id="th" scope="col">Total</th>
+        <th id="th" scope="col">Observación</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Ver</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Editar</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let compra of compras">
+        <td id="id"><b>{{compra.id}}</b></td>
+        <td>{{compra.fecha | date: 'dd/MM/yyyy'}}</td>
+        <td *ngIf="isAdmin">{{compra.idusuario}}</td>
+        <td>{{compra.total}}$</td>
+        <td>{{compra.observacion}}</td>
+        <td *ngIf="isAdmin"><button class="ui inverted blue button" routerLink="/detalleCompra/{{compra.id}}"><i class="eye icon"></i> Ver</button></td>
+        <td *ngIf="isAdmin"><button class="ui inverted green button" routerLink="/editarCompra/{{compra.id}}"><i class="edit icon"></i> Editar</button></td>
+        <td *ngIf="isAdmin"><button class="ui inverted red button" (click)="borrar(compra.id)"><i class="trash alternate icon"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div *ngIf="isAdmin" class="mt-3">
+    <button class="ui green button" routerLink="/nuevoCompra">
+      <i class="plus circle icon"></i> Nueva Factura</button>
+  </div>
+
+</div>
+
+<br>
+<br>
+<br>

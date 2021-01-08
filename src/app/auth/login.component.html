@@ -1,0 +1,46 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+
+<div class="" *ngIf="isLogged; else loggedOut">
+    <h2>Ya has iniciado sesión</h2>
+</div>
+
+<ng-template #loggedOut>
+    <div id="fondo" class="ui container">
+        <div id="login" class="ui card">
+            <div id="tabs" class="content">
+                <div class="ui tabular menu">
+                    <a class="active item" routerLink="/login">Iniciar Sesión</a>
+                     <a class="item" routerLink="/registro">Crear Cuenta</a>
+                </div>
+            </div>
+            <div id="form" class="content">
+                <form class="ui form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+                    <div class="field">
+                        <label for="nombreUsuario">Nombre de Usuario</label>
+                        <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Usuario"
+                        [(ngModel)]="nombreUsuario" required>
+                    </div>
+                    <div class="field">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="********"
+                        [(ngModel)]="password" required>
+                    </div>
+                    <div class="field">
+                        <button class="ui green button btn-block" [disabled]="!f.valid">
+                            <i class="sign in alternate icon"></i> Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<div id="container" class="ui container">
+  <h2 *ngIf="isAdmin" class="ui header">Boletos Vendidos</h2>
+  <h2 *ngIf="!isAdmin" class="ui header">Boletos Comprados</h2>
+  <table id="table" class="ui celled table">
+    <thead>
+      <tr>
+        <th id="th" scope="col">ID</th>
+        <th id="th" scope="col">Fecha de visita</th>
+        <th id="th" scope="col">Tarifa</th>
+        <th id="th" scope="col">Cantidad</th>
+        <th id="th" scope="col">Total</th>
+        <th id="th" scope="col">Compra</th>
+        <th id="th" *ngIf="isAdmin" scope="col">Ver</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Editar</th>
+        <th id="th" scope="col" *ngIf="isAdmin">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of productos">
+        <td id="id"><b>{{producto.id}}</b></td>
+        <td>{{producto.fecha | date: 'dd/MM/yyyy'}}</td>
+        <td>{{producto.idtarifa}}</td>
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.total}}$</td>
+        <td>{{producto.idcompra}}</td>
+        <td *ngIf="isAdmin"><button class="ui inverted blue button" routerLink="/detalle/{{producto.id}}"><i class="eye icon"></i> Ver</button></td>
+        <td *ngIf="isAdmin"><button class="ui inverted green button" routerLink="/editar/{{producto.id}}"><i class="edit icon"></i> Editar</button></td>
+        <td *ngIf="isAdmin"><button class="ui inverted red button" (click)="borrar(producto.id)"><i class="trash alternate icon"></i> Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <div *ngIf="isAdmin" class="mt-3">
+    <button class="ui green button" routerLink="/nuevo">
+      <i class="plus circle icon"></i> Nueva Compra de Boletos</button>
+  </div>
+</div>
+<br>
+<br>
+<br>

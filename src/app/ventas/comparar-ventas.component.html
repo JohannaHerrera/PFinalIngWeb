@@ -1,0 +1,72 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="ui container">
+  <table class="ui celled table">
+    <thead>
+      <tr>
+        <th scope="col">Mes</th>
+        <th scope="col">Total Ventido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="venta1">
+        <td>{{venta1.nombre}}</td>
+        <td>{{venta1.total}}$</td>
+      </tr>
+      <tr *ngIf="venta2">
+        <td>{{venta2.nombre}}</td>
+        <td>{{venta2.total}}$</td>
+      </tr>
+      <tr *ngIf="venta3">
+        <td>{{venta3.nombre}}</td>
+        <td>{{venta3.total}}$</td>
+      </tr>
+      <tr *ngIf="venta4">
+        <td>{{venta4.nombre}}</td>
+        <td>{{venta4.total}}$</td>
+      </tr>
+      <tr *ngIf="venta5">
+        <td>{{venta5.nombre}}</td>
+        <td>{{venta5.total}}$</td>
+      </tr>
+      <tr *ngIf="venta6">
+        <td>{{venta6.nombre}}</td>
+        <td>{{venta6.total}}$</td>
+      </tr>
+      <tr *ngIf="venta7">
+        <td>{{venta7.nombre}}</td>
+        <td>{{venta7.total}}$</td>
+      </tr>
+      <tr *ngIf="venta8">
+        <td>{{venta8.nombre}}</td>
+        <td>{{venta8.total}}$</td>
+      </tr>
+      <tr *ngIf="venta9">
+        <td>{{venta9.nombre}}</td>
+        <td>{{venta9.total}}$</td>
+      </tr>
+      <tr *ngIf="venta10">
+        <td>{{venta10.nombre}}</td>
+        <td>{{venta10.total}}$</td>
+      </tr>
+      <tr *ngIf="venta11">
+        <td>{{venta11.nombre}}</td>
+        <td>{{venta11.total}}$</td>
+      </tr>
+      <tr *ngIf="venta12">
+        <td>{{venta12.nombre}}</td>
+        <td>{{venta12.total}}$</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="">
+    <button class="ui green button" (click)="volver()">
+        <i class="arrow alternate circle left icon"></i>Volver</button>
+  </div>
+
+</div>

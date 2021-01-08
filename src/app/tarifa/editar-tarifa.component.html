@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="ui container" *ngIf="tarifa">
+    <div class="row">
+        <h3 id="titulo" class="ui header">EDITAR TARIFA</h3>
+        <div class="column">
+            <form id="form" class="ui form" (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="field">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                    [(ngModel)]="tarifa.nombre" required>
+                </div>
+                <div class="field">
+                    <label for="descripcion">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion" name="descripcion"
+                    [(ngModel)]="tarifa.descripcion" required>
+                </div>
+                <div class="field">
+                    <label for="precio">Precio</label>
+                    <input type="number" class="form-control" id="precio" name="precio"
+                    [(ngModel)]="tarifa.precio" required>
+                </div>
+                <br>
+                <button class="ui green button btn-block" [disabled]="!f.valid">
+                    <i class="check circle icon"></i>Actualizar</button>
+                <button class="ui blue button btn-block" routerLink="/listaTarifa">
+                    <i class="arrow alternate circle left icon"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>

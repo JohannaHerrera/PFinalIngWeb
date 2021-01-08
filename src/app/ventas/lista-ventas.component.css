@@ -1,0 +1,39 @@
+#th{
+    background-color: green;
+    color: white; 
+    font-size: 15px; 
+}
+
+#table{
+    border: 1px solid green;
+    text-align: center;
+    width: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#mensaje {
+    color:rgb(75, 30, 17);
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+}
+
+h2.ui.header {
+    color: green;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    font-size: 33px;
+    font-family: 'Century Gothic';
+}
+
+h3.ui.header {
+    color:rgb(75, 30, 17);
+    font-size: 24px;
+  
+}
+
+.ui.form select{
+    width: auto;
+}

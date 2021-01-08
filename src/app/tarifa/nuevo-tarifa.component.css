@@ -1,0 +1,29 @@
+#form{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 40%;
+    border-radius: 2%;
+    border: 3px solid  rgb(8, 17, 48);
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: rgb(21, 97, 107);
+    font-size: 14px;
+}
+
+#form label{
+    font-size: 17px;
+    color: white;
+}
+
+#titulo{
+    display:block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center;
+    color:  rgb(8, 17, 48);
+    font-size: 30px;
+    font-family: 'Century Gothic';
+}

@@ -1,0 +1,48 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="ui container">
+    <div class="row">
+        <div class="column">
+            <h3 id="titulo" class="ui header">NUEVA COMPRA</h3>
+            <form id="form" class="ui form" (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="field">
+                    <label for="fecha">Fecha de visita</label>
+                    <input type="date" class="form-control" id="fecha" name="fecha"
+                    [(ngModel)]="fecha" required>
+                </div>
+                <div class="field">
+                    <label for="idtarifa">Tarifa</label>
+                    <select [(ngModel)]="idtarifa" required class="form-control" id="idtarifa" name="idtarifa">
+                        <option *ngFor="let tarifa of tarifas" [value]="tarifa.id">{{tarifa.nombre}}</option>
+                    </select> 
+                </div>
+                <div class="field">
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" class="form-control" id="cantidad" name="cantidad" (input)="CTotal(cantidad)" (click)="CTotal(cantidad)"
+                    [(ngModel)]="cantidad" required>
+                </div>
+                <div class="field">
+                    <label for="total">Total</label>
+                    <input [(ngModel)]="total" [disabled]="true" class="form-control" id="total" name="total" [value]="totalT">
+                </div>
+                <div class="field">
+                    <label for="idcompra">Compra</label>
+                    <select [(ngModel)]="idcompra" required class="form-control" id="idcompra" name="idcompra">
+                        <option *ngFor="let compra of compras" [value]="compra.id">{{compra.id}}</option>
+                    </select> 
+                </div>
+                <button class="ui green button btn-block" [disabled]="!f.valid">
+                    <i class="check circle icon"></i> Crear</button>
+                <button class="ui blue button btn-block" routerLink="/lista">
+                    <i class="arrow alternate circle left icon"></i> Volver</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>

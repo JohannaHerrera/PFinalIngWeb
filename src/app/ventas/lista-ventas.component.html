@@ -1,0 +1,198 @@
+<app-menu></app-menu>
+<br>
+<br>
+<br>
+<br>
+<div class="ui container">
+  <h2 class="ui header"><b>Reporte de Ventas</b></h2>
+  <br>
+  <div class="ui grid">
+    <div class="eight wide column">
+      <h3 class="ui header"><b>Filtrar Información</b></h3>
+      <div class="ui form">
+        <div class="field">
+          <br>
+          <div class="ui radio checkbox">
+            <input type="radio" name="frequency" checked="checked" onchange="habilitar('filtro1');">
+            <label>Filtrado General</label>
+            <br>
+            <div class="ui container">
+              <select class="ui dropdown" id="filtro1" (change)="onSelect($event.target.value)">
+                <option value="" [disabled]="true">-------</option>
+                <option value="0">Todos</option>
+                <option value="1">Mes con más ventas</option>
+                <option value="2">Mes con menos ventas</option>
+              </select>
+            </div>                     
+          </div>
+        </div>
+          
+        <div class="field">
+          <br>
+          <div class="ui radio checkbox">
+            <input type="radio" name="frequency" onclick="habilitar('filtro2')">
+            <label>Filtrar por meses</label>
+            <br>
+            <div class="ui container">
+              Desde: <select class="ui dropdown" [disabled]="true" id="filtro2A" (change)="mes1($event.target.value)">
+                <option value="" [disabled]="true">Mes</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+              <br>
+              Hasta: <select class="ui dropdown" [disabled]="true" id="filtro2B" (change)="mes2($event.target.value)">
+                <option value="" [disabled]="true">Mes</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div ui container>
+          <button [disabled]="true" id="buscar" class="ui blue button" (click)="buscar()"><i class="search icon"></i>Buscar</button>
+        </div>
+
+        <br>
+        <div class="ui form">
+          <br>
+          <div class="grouped fields">
+            <label>Obtener resultados por:</label>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="example2" checked="checked" (click)="resultado1()">
+                <label>Dinero recaudado</label>
+              </div>
+            </div>
+            <div class="field">
+              <div class="ui radio checkbox">
+                <input type="radio" name="example2" (click)="resultado2()">
+                <label>Boletos vendidos</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="eight wide column">
+      <h3 id="mensaje" class="ui header"><b>{{mensaje}}</b></h3>
+      <h3 id="mensaje" class="ui header"><b>{{mensaje2}}</b></h3>
+      <table id="table" class="ui celled table">
+        <thead>
+          <tr>
+            <th id="th" scope="col">Mes</th>
+            <th id="th" scope="col">$  Total Vendido</th>
+            <th id="th" scope="col">Total Boletos Vendidos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let venta of ventas">
+            <td>{{venta.nombre}}</td>
+            <td>{{venta.total}}$</td>
+            <td>{{venta.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta1">
+            <td>{{venta1.nombre}}</td>
+            <td>{{venta1.total}}$</td>
+            <td>{{venta1.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta2">
+            <td>{{venta2.nombre}}</td>
+            <td>{{venta2.total}}$</td>
+            <td>{{venta2.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta3">
+            <td>{{venta3.nombre}}</td>
+            <td>{{venta3.total}}$</td>
+            <td>{{venta3.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta4">
+            <td>{{venta4.nombre}}</td>
+            <td>{{venta4.total}}$</td>
+            <td>{{venta4.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta5">
+            <td>{{venta5.nombre}}</td>
+            <td>{{venta5.total}}$</td>
+            <td>{{venta5.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta6">
+            <td>{{venta6.nombre}}</td>
+            <td>{{venta6.total}}$</td>
+            <td>{{venta6.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta7">
+            <td>{{venta7.nombre}}</td>
+            <td>{{venta7.total}}$</td>
+            <td>{{venta7.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta8">
+            <td>{{venta8.nombre}}</td>
+            <td>{{venta8.total}}$</td>
+            <td>{{venta8.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta9">
+            <td>{{venta9.nombre}}</td>
+            <td>{{venta9.total}}$</td>
+            <td>{{venta9.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta10">
+            <td>{{venta10.nombre}}</td>
+            <td>{{venta10.total}}$</td>
+            <td>{{venta10.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta11">
+            <td>{{venta11.nombre}}</td>
+            <td>{{venta11.total}}$</td>
+            <td>{{venta11.boletos}}</td>
+          </tr>
+          <tr *ngIf="venta12">
+            <td>{{venta12.nombre}}</td>
+            <td>{{venta12.total}}$</td>
+            <td>{{venta12.boletos}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      <table id="table" class="ui celled table">
+        <thead>
+          <tr>
+            <th id="th" scope="col">Usuario</th>
+            <th id="th" scope="col">$  Total Compras</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let pago of pagos">
+            <td>{{pago.usuario}}</td>
+            <td>{{pago.total}}$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>

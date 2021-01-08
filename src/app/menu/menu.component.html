@@ -1,0 +1,25 @@
+<div id="menu" class="ui fixed inverted menu">
+  <div class="ui container">
+    <a id="zoo" href="#" class="header item">
+      <i id="icon" class="paw icon"></i><b>Zoo</b>
+    </a>
+    <a id="item" class="item" routerLink="/"><b>Inicio</b></a>
+    <a id="item" class="item" *ngIf="isLogged" routerLink="/listaTarifa"><i class="dollar sign icon"></i><b> Tarifas</b></a>
+    <a id="item" class="item" *ngIf="isLogged && isAdmin" routerLink="/lista"><i class="ticket alternate icon"></i><b> Boletos</b></a>
+    <a id="item" class="item" *ngIf="isLogged && !isAdmin" routerLink="/lista"><i class="ticket alternate icon"></i><b> Boletos Comprados</b></a>
+    <a id="item" class="item" *ngIf="isLogged && isAdmin" routerLink="/listaCompra"><i class="credit card outline icon"></i><b> Facturas</b></a>
+    <a id="item" class="item" *ngIf="isLogged && !isAdmin" routerLink="/listaCompra"><i class="credit card outline icon"></i><b> Historial Facturas</b></a>
+    <a id="item" class="item" *ngIf="isLogged && isAdmin" routerLink="/listaVentas"><i class="chart line icon"></i><b> Reporte Ventas</b></a>
+    <div class="right menu">
+      <div class="item">
+        <a class="ui inverted white button" *ngIf="!isLogged" routerLink="/login">Iniciar Sesión</a>
+      </div>
+      <div class="item">
+        <a class="ui inverted white button" *ngIf="!isLogged" routerLink="/registro">Registrarse</a>
+      </div>
+      <div class="item">
+        <a class="ui inverted grey button" *ngIf="isLogged" (click)="onLogOut()">Cerrar Sesión</a>
+      </div>
+    </div>
+  </div>
+</div>
